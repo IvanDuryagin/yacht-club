@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Архангельский речной яхт-клуб</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="sticky-header">
+    <div class="header-container">
+      <a href="index.html" class="header-logo">
+        <img src="img/flag.webp" alt="Флаг яхт-клуба" class="header-logo-img">
+        <span>Архангельский речной яхт-клуб</span>
+      </a>
+      
+      <div class="header-actions">
+        <a href="index.html" class="home-btn" style="visibility: hidden;">← На главную</a>
+        <button class="menu-btn" onclick="toggleMenu()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          Меню
+        </button>
+        <button id="theme-toggle" class="theme-toggle">Тёмная тема</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu-overlay" onclick="toggleMenu()"></div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">Меню</div>
+      <button class="close-btn" onclick="toggleMenu()">✕</button>
+    </div>
+    <div class="menu-section-title">Разделы сайта</div>
+    <ul class="menu-list">
+      <li><a href="ustav-1911.html">Устав яхт-клуба 1911 г.</a></li>
+      <li><a href="ustav-2021.html">Устав последняя редакция 18.06.2021</a></li>
+      <li><a href="otchety.html">Отчеты о деятельности яхт-клуба</a></li>
+      <li><a href="istoriya.html">История яхт-клуба</a></li>
+      <li><a href="pesnya.html">Песня спортсменов Архангельского яхт-клуба</a></li>
+      <li><a href="kalendar.html">Календарный план яхт-клуба на 2026 г.</a></li>
+      <li><a href="pravila.html">Правила пользования базой стоянки.</a></li>
+      <li><a href="gostevye.html">Гостевые стоянки яхт-клуба</a></li>
+      <li><a href="navigaciya.html">Навигация 2026</a></li>
+    </ul>
+    <div class="contact-section">
+      <div class="menu-section-title">Контакты</div>
+      <div class="contact-block">
+        <p>+79118716854</p>
+        <p>golovin28@yandex.ru</p>
+        <p>г Архангельск, наб Северной Двины, д 110</p>
+      </div>
+      <div class="social-icons">
+        <a href="https://vk.com" target="_blank" aria-label="ВКонтакте">
+          <img src="img/vk.webp" alt="ВКонтакте">
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">Архангельский<br>речной яхт-клуб</h1>
+        <p class="hero__subtitle">115 лет истории яхтинга на Белом море</p>
+        <a href="istoriya.html" class="btn-primary" style="margin-top: 20px;">Узнать о нас больше</a>
+      </div>
+    </section>
+
+    <!-- О КЛУБЕ (Bento Grid) -->
+    <section class="bento-section">
+      <h2 class="section-title">О клубе</h2>
+      <div class="bento-grid">
+        <article class="bento-card bento-wide">
+          <div class="bento-card__bg-num">01</div>
+          <h3>История и традиции</h3>
+          <p>Основан в 1911 году. Более века мы храним традиции парусного спорта на Севере России.</p>
+        </article>
+
+        <article class="bento-card bento-tall">
+          <div class="bento-card__bg-num">02</div>
+          <h3>Флот клуба</h3>
+          <p>Регулярные регаты, обучение яхтингу и возможность стать частью сплоченной команды профессионалов.</p>
+        </article>
+
+        <article class="bento-card">
+          <div class="bento-card__bg-num">03</div>
+          <h3>База стоянки</h3>
+          <p>Современная инфраструктура на набережной Северной Двины.</p>
+        </article>
+
+        <article class="bento-card">
+          <div class="bento-card__bg-num">04</div>
+          <h3>Обучение</h3>
+          <p>Школа юнг и курсы яхтенных рулевых для всех желающих.</p>
+        </article>
+
+        <article class="bento-card bento-wide">
+          <div class="bento-card__bg-num">05</div>
+          <h3>Соревнования</h3>
+          <p>Ежегодно мы проводим Кубок Архангельска и участвуем во всероссийских парусных регатах.</p>
+        </article>
+
+        <article class="bento-card">
+          <div class="bento-card__bg-num">06</div>
+          <h3>Единение с природой</h3>
+          <p>Белое море и Северная Двина открывают уникальные возможности для яхтинга.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ГАЛЕРЕЯ (Горизонтальный скролл) -->
+    <section class="dark-bg-section gallery-sec" id="gallery">
+      <div class="container">
+        <h2 class="section-title">Галерея</h2>
+        <div class="gallery-scroll">
+          <img src="img/main1.webp" alt="Яхт-клуб — фото 1" class="gallery-img">
+          <img src="img/main2.webp" alt="Яхт-клуб — фото 2" class="gallery-img">
+          <img src="img/main3.webp" alt="Яхт-клуб — фото 3" class="gallery-img">
+          <img src="img/main4.webp" alt="Яхт-клуб — фото 4" class="gallery-img">
+          <img src="img/main5.webp" alt="Яхт-клуб — фото 5" class="gallery-img">
+          <img src="img/main6.webp" alt="Яхт-клуб — фото 6" class="gallery-img">
+          <img src="img/main7.webp" alt="Яхт-клуб — фото 7" class="gallery-img">
+          <img src="img/main8.webp" alt="Яхт-клуб — фото 8" class="gallery-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- ВИДЕО -->
+    <section class="dark-bg-section video-sec" id="video">
+      <div class="container">
+        <h2 class="section-title">Видео</h2>
+        <div class="video-wrapper">
+          <!-- Встроено локальное видео -->
+          <video controls preload="metadata">
+            <source src="doc/Архангельский яхт-клуб Водник.mp4" type="video/mp4">
+            Ваш браузер не поддерживает встроенное видео.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- КОНТАКТЫ И КАРТА (Объединенный раздел) -->
+    <section class="bento-section" id="contacts">
+      <h2 class="section-title">Контакты</h2>
+      
+      <div class="contacts-layout">
+        <!-- Карта слева -->
+        <div class="map-wrapper">
+          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adeb6998151eba54c88fcd526d1713f9b0ff98c0f8567d030a7d96ea9c98468b8&amp;source=constructor" width="100%" height="100%" frameborder="0" allowfullscreen="true"></iframe>
+        </div>
+        
+        <!-- Информация справа -->
+        <div class="contacts-box">
+          <p>Есть вопросы по вступлению, аренде стоянки или участию в регатах? Напишите нам!</p>
+          
+          <p class="contact-info-text">
+            <strong>Тел:</strong> +7 (911) 871-68-54 <br><br>
+            <strong>Email:</strong> golovin28@yandex.ru <br><br>
+            <strong>Адрес:</strong> г. Архангельск, наб. Северной Двины, д. 110
+          </p>
+          
+          <a href="mailto:golovin28@yandex.ru" class="btn-primary">Связаться по почте</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer class="site-footer">
+    <span class="footer-logo">Архангельский речной яхт-клуб</span>
+    <p style="margin-top: 15px; font-size: 1rem;">&copy; 1911–2026. Все права защищены.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

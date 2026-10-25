@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Устав 2021 г.</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <header class="sticky-header">
+    <div class="header-container">
+      <a href="index.html" class="header-logo">
+        <img src="img/flag.webp" alt="Флаг яхт-клуба" class="header-logo-img">
+        <span>Архангельский речной яхт-клуб</span>
+      </a>
+      <div class="header-actions">
+        <a href="index.html" class="home-btn">← На главную</a>
+        <button class="menu-btn" onclick="toggleMenu()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          Меню
+        </button>
+        <button id="theme-toggle" class="theme-toggle">Тёмная тема</button>
+      </div>
+    </div>
+  </header>
+  
+  <div class="menu-overlay" onclick="toggleMenu()"></div>
+  
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">Меню</div>
+      <button class="close-btn" onclick="toggleMenu()">✕</button>
+    </div>
+    <div class="menu-section-title">Разделы сайта</div>
+    <ul class="menu-list">
+      <li><a href="ustav-1911.html">Устав яхт-клуба 1911 г.</a></li>
+      <li><a href="ustav-2021.html" class="active">Устав последняя редакция 18.06.2021</a></li>
+      <li><a href="otchety.html">Отчеты о деятельности яхт-клуба</a></li>
+      <li><a href="istoriya.html">История яхт-клуба</a></li>
+      <li><a href="pesnya.html">Песня спортсменов Архангельского яхт-клуба</a></li>
+      <li><a href="kalendar.html">Календарный план яхт-клуба на 2026 г.</a></li>
+      <li><a href="pravila.html">Правила пользования базой стоянки.</a></li>
+      <li><a href="gostevye.html">Гостевые стоянки яхт-клуба</a></li>
+      <li><a href="navigaciya.html">Навигация 2026</a></li>
+    </ul>
+    <div class="contact-section">
+      <div class="menu-section-title">Контакты</div>
+      <div class="contact-block">
+        <p>+79118716854</p>
+        <p>golovin28@yandex.ru</p>
+        <p>г Архангельск, наб Северной Двины, д 110</p>
+      </div>
+      <div class="social-icons">
+        <a href="https://vk.com" target="_blank" aria-label="ВКонтакте">
+          <img src="img/vk.webp" alt="ВКонтакте">
+        </a>
+      </div>
+    </div>
+  </aside>
+  
+  <main class="main-content">
+    <div class="content-wrapper" style="max-width: 1000px;">
+      
+      <div class="book-wrapper">
+        <h1 style="text-align: center; margin-bottom: 10px;">Устав (ред. 18.06.2021)</h1>
+        
+        <!-- Кнопка скачивания PDF -->
+        <div style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
+          <a href="doc/Ustav-18.06.21.pdf" download class="btn-primary" style="font-size: 1.1rem; padding: 12px 30px; display: inline-flex; align-items: center; gap: 10px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Скачать оригинал (PDF)
+          </a>
+        </div>
+
+        <!-- Подсказка -->
+        <div class="book-hint">
+          Кликните по странице или используйте стрелки, чтобы листать
+        </div>
+
+        <!-- Книга (добавлены data-атрибуты) -->
+        <div class="book-container" data-total="13" data-prefix="n">
+          <button class="book-btn prev" onclick="prevPage()">❮</button>
+          
+          <div class="book-page" onclick="nextPage()">
+            <img id="charter-image" src="img/1n.webp" alt="Страница устава">
+          </div>
+          
+          <button class="book-btn next" onclick="nextPage()">❯</button>
+        </div>
+
+        <!-- Счетчик страниц -->
+        <div class="book-pagination">
+          Страница <span id="current-page-num">1</span> из <span>13</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer class="site-footer">
+    <span class="footer-logo">Архангельский речной яхт-клуб</span>
+    <p style="margin-top: 15px; font-size: 1rem;">&copy; 1911–2026. Все права защищены.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

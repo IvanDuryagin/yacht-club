@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Гостевые стоянки</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <header class="sticky-header">
+    <div class="header-container">
+      <a href="index.html" class="header-logo">
+        <img src="img/flag.webp" alt="Флаг яхт-клуба" class="header-logo-img">
+        <span>Архангельский речной яхт-клуб</span>
+      </a>
+      <div class="header-actions">
+        <a href="index.html" class="home-btn">← На главную</a>
+        <button class="menu-btn" onclick="toggleMenu()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          Меню
+        </button>
+        <button id="theme-toggle" class="theme-toggle">Тёмная тема</button>
+      </div>
+    </div>
+  </header>
+  
+  <div class="menu-overlay" onclick="toggleMenu()"></div>
+  
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">Меню</div>
+      <button class="close-btn" onclick="toggleMenu()">✕</button>
+    </div>
+    <div class="menu-section-title">Разделы сайта</div>
+    <ul class="menu-list">
+      <li><a href="ustav-1911.html">Устав яхт-клуба 1911 г.</a></li>
+      <li><a href="ustav-2021.html">Устав последняя редакция 18.06.2021</a></li>
+      <li><a href="otchety.html">Отчеты о деятельности яхт-клуба</a></li>
+      <li><a href="istoriya.html">История яхт-клуба</a></li>
+      <li><a href="pesnya.html">Песня спортсменов Архангельского яхт-клуба</a></li>
+      <li><a href="kalendar.html">Календарный план яхт-клуба на 2026 г.</a></li>
+      <li><a href="pravila.html">Правила пользования базой стоянки.</a></li>
+      <li><a href="gostevye.html" class="active">Гостевые стоянки яхт-клуба</a></li>
+      <li><a href="navigaciya.html">Навигация 2026</a></li>
+    </ul>
+    <div class="contact-section">
+      <div class="menu-section-title">Контакты</div>
+      <div class="contact-block">
+        <p>+79118716854</p>
+        <p>golovin28@yandex.ru</p>
+        <p>г Архангельск, наб Северной Двины, д 110</p>
+      </div>
+      <div class="social-icons">
+        <a href="https://vk.com" target="_blank" aria-label="ВКонтакте">
+          <img src="img/vk.webp" alt="ВКонтакте">
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="content-wrapper guest-content">
+      <h1>Гостевые стоянки яхт-клуба</h1>
+      
+      <p>Архангельский речной яхт-клуб предлагает гостевые стоянки иногородним яхтсменам и путешественникам по предварительной договоренности на свободные места.</p>
+
+      <h2>Ограничения по осадке</h2>
+      <p>База стоянки ограничена для входа килевых яхт по осадке:</p>
+      <ul>
+        <li><strong>Осадка 2.35 м</strong> — только в полную воду в сизигию.</li>
+        <li><strong>Осадка 1,8 м</strong> — 2 часа до / после полной воды в квадратуру.</li>
+        <li>В самой бухте у причала глубины для судов с осадкой <strong>до 3.0 м</strong>.</li>
+      </ul>
+
+      <h2>Инфраструктура базы</h2>
+      
+      <div class="facilities-grid">
+        <div class="facility-box">
+          <h3>На базе есть</h3>
+          <ul>
+            <li>Туалет</li>
+            <li>Электроснабжение</li>
+            <li>Удобная локация в центре города</li>
+            <li>Возможность заправки газом / топливом в городе</li>
+            <li>Слип</li>
+          </ul>
+        </div>
+        
+        <div class="facility-box no">
+          <h3>На базе отсутствует</h3>
+          <ul>
+            <li>Питьевая вода</li>
+            <li>Душ</li>
+            <li>Прачечная</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Дополнительные услуги</h2>
+      <ul>
+        <li>Предоставляем услуги агентирования (доставку топлива, воды, закупку продуктов, организацию экскурсий по городу и т.д.).</li>
+        <li>Также предлагаем услуги опытного штурмана для пересечения Белого моря.</li>
+      </ul>
+
+      <h2>Схема захода в Успенскую гавань</h2>
+      <p>От буя (основной фарватер справа) на угол причала.</p>
+      <figure class="info-image">
+        <img src="img/схема захода в успенскую бухту.webp" alt="Схема захода в Успенскую гавань">
+      </figure>
+
+      <h2>Полезные документы</h2>
+      <p>Для стоянки в яхт-клубе необходимо ознакомиться с правилами пользования базой стоянки и заполнить заявление.</p>
+      
+      <ul class="reports-list" style="margin-bottom: 30px;">
+        <li>
+          <a href="doc/Таблица приливов-отливов.pdf" download class="report-link">
+            <span>Таблица приливов Архангельск (PDF)</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </a>
+        </li>
+        <li>
+          <a href="doc/Документы на приход в клуб.zip" download class="report-link">
+            <span>Документы на приход в клуб (ZIP-архив)</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </a>
+        </li>
+      </ul>
+
+      <p>Заявление отправлять на Email: <a href="mailto:golovin28@yandex.ru" style="color: var(--color-primary-strong); text-decoration: underline;">golovin28@yandex.ru</a></p>
+
+      <div class="contacts-info">
+        <h3 style="font-family: var(--font-title); margin-bottom: 15px; font-size: 1.5rem; color: var(--color-text);">Экстренные службы и контакты</h3>
+        <p>Единый номер экстренных служб города – <strong>112</strong></p>
+        <p>Центральная спасательная станция на водных объектах: <strong>+7 (8182) 20-90-01</strong></p>
+        <p>ГИМС Отдел контрольно-надзорной деятельности: <strong>+7 (8182) 65-19-05</strong></p>
+        <p>Командор НП «Архангельский речной яхт-клуб»: <strong>+7 911 871 68 54</strong></p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer class="site-footer">
+    <span class="footer-logo">Архангельский речной яхт-клуб</span>
+    <p style="margin-top: 15px; font-size: 1rem;">&copy; 1911–2026. Все права защищены.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
