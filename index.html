@@ -68,62 +68,47 @@
       </div>
     </section>
 
-    <!-- О КЛУБЕ (Bento Grid) -->
+    <!-- О КЛУБЕ (Bento Grid с фонами) -->
     <section class="bento-section">
       <h2 class="section-title">О клубе</h2>
       <div class="bento-grid">
-        <article class="bento-card bento-wide">
+        
+        <article class="bento-card bento-wide" style="--bg-img: url('img/main1.webp');" data-img="img/main1.webp">
           <div class="bento-card__bg-num">01</div>
           <h3>История и традиции</h3>
           <p>Основан в 1911 году. Более века мы храним традиции парусного спорта на Севере России.</p>
         </article>
 
-        <article class="bento-card bento-tall">
+        <article class="bento-card bento-tall" style="--bg-img: url('img/main2.webp');" data-img="img/main2.webp">
           <div class="bento-card__bg-num">02</div>
           <h3>Флот клуба</h3>
           <p>Регулярные регаты, обучение яхтингу и возможность стать частью сплоченной команды профессионалов.</p>
         </article>
 
-        <article class="bento-card">
+        <article class="bento-card" style="--bg-img: url('img/main3.webp');" data-img="img/main3.webp">
           <div class="bento-card__bg-num">03</div>
           <h3>База стоянки</h3>
           <p>Современная инфраструктура на набережной Северной Двины.</p>
         </article>
 
-        <article class="bento-card">
+        <article class="bento-card" style="--bg-img: url('img/main4.webp');" data-img="img/main4.webp">
           <div class="bento-card__bg-num">04</div>
           <h3>Обучение</h3>
           <p>Школа юнг и курсы яхтенных рулевых для всех желающих.</p>
         </article>
 
-        <article class="bento-card bento-wide">
+        <article class="bento-card bento-wide" style="--bg-img: url('img/main5.webp');" data-img="img/main5.webp">
           <div class="bento-card__bg-num">05</div>
           <h3>Соревнования</h3>
           <p>Ежегодно мы проводим Кубок Архангельска и участвуем во всероссийских парусных регатах.</p>
         </article>
 
-        <article class="bento-card">
+        <article class="bento-card" style="--bg-img: url('img/main6.webp');" data-img="img/main6.webp">
           <div class="bento-card__bg-num">06</div>
           <h3>Единение с природой</h3>
           <p>Белое море и Северная Двина открывают уникальные возможности для яхтинга.</p>
         </article>
-      </div>
-    </section>
 
-    <!-- ГАЛЕРЕЯ (Горизонтальный скролл) -->
-    <section class="dark-bg-section gallery-sec" id="gallery">
-      <div class="container">
-        <h2 class="section-title">Галерея</h2>
-        <div class="gallery-scroll">
-          <img src="img/main1.webp" alt="Яхт-клуб — фото 1" class="gallery-img">
-          <img src="img/main2.webp" alt="Яхт-клуб — фото 2" class="gallery-img">
-          <img src="img/main3.webp" alt="Яхт-клуб — фото 3" class="gallery-img">
-          <img src="img/main4.webp" alt="Яхт-клуб — фото 4" class="gallery-img">
-          <img src="img/main5.webp" alt="Яхт-клуб — фото 5" class="gallery-img">
-          <img src="img/main6.webp" alt="Яхт-клуб — фото 6" class="gallery-img">
-          <img src="img/main7.webp" alt="Яхт-клуб — фото 7" class="gallery-img">
-          <img src="img/main8.webp" alt="Яхт-клуб — фото 8" class="gallery-img">
-        </div>
       </div>
     </section>
 
@@ -132,7 +117,6 @@
       <div class="container">
         <h2 class="section-title">Видео</h2>
         <div class="video-wrapper">
-          <!-- Встроено локальное видео -->
           <video controls preload="metadata">
             <source src="doc/Архангельский яхт-клуб Водник.mp4" type="video/mp4">
             Ваш браузер не поддерживает встроенное видео.
@@ -141,17 +125,15 @@
       </div>
     </section>
 
-    <!-- КОНТАКТЫ И КАРТА (Объединенный раздел) -->
+    <!-- КОНТАКТЫ И КАРТА -->
     <section class="bento-section" id="contacts">
       <h2 class="section-title">Контакты</h2>
       
       <div class="contacts-layout">
-        <!-- Карта слева -->
         <div class="map-wrapper">
           <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adeb6998151eba54c88fcd526d1713f9b0ff98c0f8567d030a7d96ea9c98468b8&amp;source=constructor" width="100%" height="100%" frameborder="0" allowfullscreen="true"></iframe>
         </div>
         
-        <!-- Информация справа -->
         <div class="contacts-box">
           <p>Есть вопросы по вступлению, аренде стоянки или участию в регатах? Напишите нам!</p>
           
@@ -166,6 +148,12 @@
       </div>
     </section>
   </main>
+
+  <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ФОТО (ЛАЙТБОКС) -->
+  <div id="image-modal" class="image-modal">
+    <span class="close-modal">&times;</span>
+    <img id="modal-img" src="" alt="Увеличенное изображение">
+  </div>
 
   <!-- ПОДВАЛ -->
   <footer class="site-footer">

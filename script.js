@@ -134,3 +134,47 @@ document.addEventListener("DOMContentLoaded", () => {
     updateBook();
   }
 });
+
+// === ЛОГИКА ЛАЙТБОКСА (ОТКРЫТИЕ КАРТИНОК ИЗ BENTO) ===
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-img');
+  const closeBtn = document.querySelector('.close-modal');
+  const bentoCards = document.querySelectorAll('.bento-card');
+
+  if (modal && modalImg && closeBtn) {
+    // Открытие при клике на карточку
+    bentoCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const imgSrc = card.getAttribute('data-img');
+        if (imgSrc) {
+          modalImg.src = imgSrc;
+          modal.style.display = 'flex';
+          document.body.style.overflow = 'hidden'; // Блокируем прокрутку
+        }
+      });
+    });
+
+    // Закрытие по крестику
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+
+    // Закрытие по клику на темный фон
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Закрытие по нажатию на Esc
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  }
+});
