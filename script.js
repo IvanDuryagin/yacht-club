@@ -135,22 +135,33 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// === ЛОГИКА ЛАЙТБОКСА (ОТКРЫТИЕ КАРТИНОК ИЗ BENTO) ===
+// === ЛОГИКА ЛАЙТБОКСА (ГАЛЕРЕЯ ИЗ BENTO) ===
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById('image-modal');
-  const modalImg = document.getElementById('modal-img');
+  const modalGallery = document.getElementById('modal-gallery');
   const closeBtn = document.querySelector('.close-modal');
   const bentoCards = document.querySelectorAll('.bento-card');
 
-  if (modal && modalImg && closeBtn) {
+  if (modal && modalGallery && closeBtn) {
     // Открытие при клике на карточку
     bentoCards.forEach(card => {
       card.addEventListener('click', () => {
-        const imgSrc = card.getAttribute('data-img');
-        if (imgSrc) {
-          modalImg.src = imgSrc;
+        const galleryData = card.getAttribute('data-gallery');
+        
+        if (galleryData) {
+          const images = galleryData.split(','); // Разбиваем строку на массив путей
+          modalGallery.innerHTML = ''; // Очищаем от предыдущих фото
+          
+          // Создаем картинки и вставляем в модалку
+          images.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src.trim(); // trim() на случай лишних пробелов
+            img.alt = "Фотография яхт-клуба";
+            modalGallery.appendChild(img);
+          });
+          
           modal.style.display = 'flex';
-          document.body.style.overflow = 'hidden'; // Блокируем прокрутку
+          document.body.style.overflow = 'hidden'; // Блокируем прокрутку сайта
         }
       });
     });

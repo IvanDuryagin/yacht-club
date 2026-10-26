@@ -1511,3 +1511,42 @@ html {
 .video-item {
   background-color: #000 !important;
 }
+
+/* ===== СТИЛИ ДЛЯ ГАЛЕРЕИ В МОДАЛЬНОМ ОКНЕ ===== */
+.modal-gallery {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  width: 95%; /* Отступы по бокам */
+  height: 85vh;
+  align-items: center;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+  
+  /* Стилизация ползунка */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) transparent;
+}
+
+.modal-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+.modal-gallery::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.modal-gallery::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 10px;
+}
+
+.modal-gallery img {
+  height: 100%; /* Картинка занимает всю высоту модалки */
+  width: auto;
+  max-width: 90vw;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  scroll-snap-align: center;
+  background: #000;
+}
