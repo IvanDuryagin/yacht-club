@@ -1372,3 +1372,142 @@ html {
     padding-top: 110px !important; /* Отодвигаем контент вниз (84px шапка + отступ) */
   }
 }
+
+/* ===== ГОРИЗОНТАЛЬНАЯ ГАЛЕРЕЯ ВИДЕО ===== */
+.video-gallery-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 25px; /* Отступ для ползунка */
+  scrollbar-width: thin; /* Для Firefox */
+  scrollbar-color: var(--color-primary-strong) transparent;
+}
+
+/* Настройка самого ползунка в Chrome/Safari/Edge */
+.video-gallery-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.video-gallery-scroll::-webkit-scrollbar-track {
+  background: rgba(11, 29, 51, 0.05);
+  border-radius: 10px;
+}
+.dark-mode .video-gallery-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+.video-gallery-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary-strong);
+  border-radius: 10px;
+}
+
+/* Карточка с видео */
+.video-item {
+  flex: 0 0 80%; /* Занимает 80% ширины, чтобы было видно край следующего видео */
+  max-width: 800px; /* Ограничиваем максимальную ширину на больших мониторах */
+  scroll-snap-align: start;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(11, 29, 51, 0.15);
+  background: #000;
+  border: 1px solid var(--color-border);
+}
+
+/* Само видео внутри карточки */
+.video-item video {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  display: block;
+  border: none;
+  object-fit: contain;
+  background: #000;
+}
+
+/* На мобильных делаем видео чуть шире */
+@media (max-width: 768px) {
+  .video-item {
+    flex: 0 0 90%;
+  }
+}
+
+/* ===== СТИЛИ ДЛЯ КАРТИНОК В ГОРИЗОНТАЛЬНОЙ ГАЛЕРЕЕ ===== */
+.gallery-image-item {
+  flex: 0 0 400px; /* Ширина карточки с картинкой (на ПК) */
+  height: 300px;   /* Фиксированная высота для ровного ряда */
+  scroll-snap-align: start;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(11, 29, 51, 0.15);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  cursor: pointer; /* Чтобы было понятно, что можно кликнуть */
+}
+
+.gallery-image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Картинка заполняет блок без искажений */
+  transition: transform 0.3s ease;
+}
+
+/* Небольшое увеличение при наведении */
+.gallery-image-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Адаптация под мобильные телефоны */
+@media (max-width: 768px) {
+  .gallery-image-item {
+    flex: 0 0 280px; /* Ширина на телефонах */
+    height: 200px;   /* Высота на телефонах */
+  }
+}
+
+/* ===== ОДИНАКОВЫЕ РАЗМЕРЫ ДЛЯ ВИДЕО И КАРТИНОК В ГАЛЕРЕЕ ===== */
+.video-item, 
+.gallery-image-item {
+  flex: 0 0 500px; /* Ширина карточки на ПК */
+  height: 300px;   /* Высота карточки на ПК */
+  scroll-snap-align: start;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(11, 29, 51, 0.15);
+  border: 1px solid var(--color-border);
+  background-color: #000; /* Черный фон, чтобы видео смотрелось органично */
+}
+
+/* Заставляем и видео, и картинки заполнять карточку целиком */
+.video-item video, 
+.gallery-image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Обрезает края, но заполняет блок без искажений пропорций */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Эффект при наведении для картинок */
+.gallery-image-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Адаптация под мобильные телефоны */
+@media (max-width: 768px) {
+  .video-item, 
+  .gallery-image-item {
+    flex: 0 0 280px; /* Ширина на телефонах */
+    height: 180px;   /* Высота на телефонах */
+  }
+}
+
+/* ===== УБИРАЕМ ТОНКУЮ РАМКУ В ГАЛЕРЕЕ ===== */
+.video-item, 
+.gallery-image-item {
+  border: none !important; /* Убираем рамку */
+  background-color: transparent !important; /* Убираем черный фон контейнера */
+}
+
+/* Оставляем черный фон только для самого видео на случай, если оно не загрузилось */
+.video-item {
+  background-color: #000 !important;
+}
