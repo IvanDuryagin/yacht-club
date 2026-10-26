@@ -25,10 +25,10 @@ const htmlElement = document.documentElement;
 function applyTheme(theme) {
   if (theme === 'dark') {
     htmlElement.classList.add('dark-mode');
-    if(themeBtn) themeBtn.textContent = 'Светлая тема';
+    //if(themeBtn) themeBtn.textContent = 'Светлая тема';
   } else {
     htmlElement.classList.remove('dark-mode');
-    if(themeBtn) themeBtn.textContent = 'Тёмная тема';
+    //if(themeBtn) themeBtn.textContent = 'Тёмная тема';
   }
   localStorage.setItem('theme', theme);
 }

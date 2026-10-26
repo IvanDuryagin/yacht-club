@@ -65,7 +65,10 @@
 
 /* ===== Базовые стили ===== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 20px; }
+html { 
+  scroll-behavior: smooth; 
+  font-size: 20px; 
+}
 body {
   font-family: var(--font-text);
   font-weight: 400;
@@ -624,6 +627,10 @@ img { max-width: 100%; height: auto; display: block; }
   .history-page > p:first-of-type::first-letter {
     font-size: 3.5rem;
   }
+
+  .sticky-header {
+  min-height: 64px;
+  }
 }
 
 /* ===== СТИЛИ ДЛЯ СПИСКА ОТЧЕТОВ ===== */
@@ -1098,4 +1105,203 @@ img { max-width: 100%; height: auto; display: block; }
 
 .close-modal:hover {
   color: var(--color-primary);
+}
+
+/* ===== ГЛОБАЛЬНЫЕ ПРАВИЛА ДЛЯ ИКОНОК В ШАПКЕ ===== */
+.home-btn svg, .menu-btn svg, .theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.theme-toggle .icon-moon,
+.menu-btn .icon-close {
+  display: none;
+}
+
+/* Смена иконок в зависимости от темы */
+.dark-mode .theme-toggle .icon-sun { display: none; }
+.dark-mode .theme-toggle .icon-moon { display: block; }
+
+/* Смена иконок в зависимости от меню (крестик вместо гамбургера) */
+body.nav-open .menu-btn .icon-menu { display: none; }
+body.nav-open .menu-btn .icon-close { display: block; }
+
+/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
+@media (max-width: 768px) {
+  /* 1. Убираем чехарду с кнопками: фиксируем их справа */
+  .header-container {
+    position: relative;
+    justify-content: flex-start; /* Логотип прижимаем влево */
+    min-height: 64px;
+    padding: 10px 15px;
+  }
+  
+  .header-logo {
+    max-width: 65%; /* Чтобы не наезжало на кнопки */
+    font-size: 1rem;
+    line-height: 1.1;
+    gap: 8px;
+  }
+  
+  .header-actions {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: auto;
+  }
+
+  /* Превращаем кнопки в аккуратные кружочки с иконками */
+  .home-btn, .menu-btn, .theme-toggle {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 2px 8px rgba(11, 29, 51, 0.05);
+  }
+  
+  /* Скрываем текст внутри кнопок, оставляя только иконки */
+  .header-actions .btn-text {
+    display: none;
+  }
+
+  /* 2. Уменьшаем заголовок Hero, чтобы он всегда влезал */
+  .hero__title {
+    font-size: clamp(1.8rem, 10vw, 3.5rem);
+    word-break: break-word;
+  }
+
+  /* 3. Отодвигаем верхнюю границу раздела "Видео" */
+  .video-sec {
+    padding-top: 40px;
+  }
+
+  /* 4. Убираем огромные радиусы кнопок на странице Устава */
+  .book-hint {
+    border-radius: 12px;
+    font-size: 1rem;
+    padding: 12px 15px;
+  }
+  
+  .book-wrapper .btn-primary {
+    border-radius: 12px !important;
+    font-size: 1rem !important;
+    padding: 12px 20px !important;
+  }
+
+  .sticky-header {
+  min-height: 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  .header-logo {
+    justify-content: flex-start;
+    text-align: left;
+    max-width: calc(100% - 150px);
+    padding-right: 8px;
+  }
+
+  .header-actions {
+    flex-wrap: nowrap;
+  }
+}
+
+/* ===== Кнопка темы — только иконка, круглая, на всех экранах ===== */
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(11, 29, 51, 0.05);
+}
+
+/* Скрываем текст «Тема» внутри кнопки */
+.theme-toggle .btn-text {
+  display: none;
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-primary-strong);
+}
+
+/* ===== ФИНАЛЬНЫЙ ФИКС ШАПКИ И МОБИЛЬНОГО МЕНЮ ===== */
+
+/* 1. Настройки для ПК (фиксируем высоту) */
+.sticky-header {
+  height: 84px !important;
+  min-height: 84px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  z-index: 1000 !important; /* Шапка всегда сверху */
+}
+
+.header-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 2. Убираем дерганье шапки при открытии меню */
+body.nav-open {
+  padding-right: 0 !important; /* Отключаем сдвиг, из-за которого шапка "слетает" */
+}
+
+/* 3. Настройки для мобильных */
+@media (max-width: 768px) {
+  .sticky-header {
+    height: 64px !important;
+    min-height: 64px !important;
+  }
+  
+  .header-container {
+    position: relative;
+    justify-content: flex-start;
+    padding: 0 15px;
+  }
+  
+  .header-actions {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: auto;
+  }
+
+  /* Опускаем выезжающее меню вниз, чтобы шапка не перекрывала слово "Меню" */
+  .sidebar {
+    padding-top: 80px !important; /* Отступ под 64px шапки + запас */
+  }
+  
+  /* Скрываем лишний крестик внутри меню, так как он уже есть в шапке */
+  .sidebar-header .close-btn {
+    display: none !important;
+  }
 }
